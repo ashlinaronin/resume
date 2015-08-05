@@ -72,6 +72,7 @@ class Job
     {
         return $this->address;
     }
+
     function getSalary()
     {
         return $this->salary;
