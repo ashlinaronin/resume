@@ -7,7 +7,7 @@
         <div class='container'>
             <h1>Your Lovely Resume</h1>
             {% if resume is not empty %}
-
+                <!--{% set count = 0 %}-->
 
                     {% for job in resume %}
                         <div class='row'>
@@ -26,10 +26,19 @@
                         </div>
                         <div class='row'>
 
-                                <p></p>
+                                <p>Current count is: <!--{{ count }}--></p>
+
+                                <form action='/delete_job' method='get'>
+                                <div class='form-group'>
+                                    <input id='index_to_remove' name='index_to_remove' type='number' value='{{ loop.index - 1}}'>
+                                        <button type='submit'>{{ loop.index - 1 }}</button>
+
+                                </div>
+                            </form>
                                 <hr>
 
                         </div>
+                        <!--% count = count + 1 %}-->
                     {% endfor %}
 
             {% else %}

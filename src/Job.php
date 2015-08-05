@@ -83,6 +83,7 @@ class Job
         array_push($_SESSION['list_of_jobs'], $this);
     }
 
+
     static function getAll()
     {
         return $_SESSION['list_of_jobs'];
@@ -91,6 +92,11 @@ class Job
     static function deleteAll()
     {
         $_SESSION['list_of_jobs'] = array();
+    }
+
+    static function deleteSpecificJob($index)
+    {
+        unset($_SESSION['list_of_jobs'][$index]);
     }
 
 }

@@ -35,6 +35,13 @@
         return $app['twig']->render('resume.html.twig', array('resume' => array()));
     });
 
+    $app->get("/delete_job", function() use ($app) {
+        $index_to_remove = $_GET['index_to_remove'];
+        Job::deleteSpecificJob($index_to_remove);
+        //unset($_SESSION['list_of_jobs'][0]);
+        return "Job 0 deleted thank you";
+    });
+
 
     return $app;
 

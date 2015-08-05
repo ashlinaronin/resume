@@ -1,17 +1,20 @@
 <html>
     <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
         <title>Job Created</title>
         <!-- content redirect after 5s, we escaped the single quotes -->
         <meta http-equiv='refresh' content='3; URL=\'/\'' />
     </head>
     <body>
-        <h1>You created a job!</h1>
-        <p>
-            {{ newjob.getTitle }} at {{ newjob.getCompany}}
-        </p>
-        <p>
-            This page will redirect to <a href='/'>your resume</a> in 5 seconds.
-            <!-- ;-) -->
-        </p>
+        <div class='container'>
+            <h1>You created a job!</h1>
+            <p>
+                {{ newjob.getTitle }} at {{ newjob.getCompany}}
+            </p>
+            <p>
+                This page will redirect to <a href='/'>your resume</a> in 5 seconds.
+                <!-- ;-) -->
+            </p>
+        </div>
     </body>
 </html>
