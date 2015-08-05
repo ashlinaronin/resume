@@ -21,8 +21,8 @@
     $app->post("/create_job", function() use ($app) {
         $job = new Job($_POST['company'],$_POST['title'],$_POST['start_date'],$_POST['end_date'],$_POST['address'],$_POST['salary']);
         $job->save();
-        return $app['twig']->render('create_job.html.twig');
-    }); 
+        return $app['twig']->render('create_job.html.twig', array('newjob' => $job));
+    });
 
     return $app;
 
