@@ -11,24 +11,24 @@
 
                     {% for job in resume %}
                         <div class='row'>
-                            <div class='col-md-3'><strong>Company:</strong> {{ job.getCompany }}</div>
+                            <div class='col-md-4'><strong>Company:</strong> {{ job.getCompany }}</div>
                             <div class='col-md-3'>Start Date: {{ job.getStartDate }}</div>
                             <div class='col-md-3'>End Date: {{ job.getEndDate }}</div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-3'>Address: {{ job.getAddress }}</div>
+                            <div class='col-md-4'>Address: {{ job.getAddress }}</div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-3'>Title: {{ job.getTitle }}</div>
+                            <div class='col-md-4'>Title: {{ job.getTitle }}</div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-3'>Salary: {{ job.getSalary }}</div>
+                            <div class='col-md-4'>Salary: {{ job.getSalary }}</div>
                         </div>
                         <div class='row'>
-                            <div class='col-md-9'>
+
                                 <p></p>
                                 <hr>
-                            </div>
+
                         </div>
                     {% endfor %}
 

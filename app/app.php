@@ -14,7 +14,6 @@
     ));
 
 
-    // We don't need another route because display is dependent on array content
     $app->get("/", function() use ($app) {
             return $app['twig']->render('resume.html.twig', array('resume' => Job::getAll()));
     });
@@ -29,7 +28,12 @@
         return $app['twig']->render('job_created.html.twig', array('newjob' => $job));
     });
 
-    // make delete_job route
+
+    // We don't need to make a new page, just clear the resume and display the / page.
+    $app->get("/clear_resume", function() use ($app) {
+        Job::deleteAll();
+        return $app['twig']->render('resume.html.twig', array('resume' => array()));
+    });
 
 
     return $app;
