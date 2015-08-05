@@ -7,12 +7,11 @@
     <body>
         <h1>You created a job!</h1>
         <p>
-            {{ newjob.getTitle }}
+            {{ newjob.getTitle }} at {{ newjob.getCompany}}
         </p>
         <p>
-            This page will redirect to your resume in 5 seconds.
+            This page will redirect to <a href='/'>your resume</a> in 5 seconds.
             <!-- ;-) -->
         </p>
-        <p><a href='/'>View your resume</a></p>
     </body>
 </html>
