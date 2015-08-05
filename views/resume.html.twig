@@ -1,46 +1,25 @@
 <html>
     <head>
-        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
         <title>Resume</title>
     </head>
     <body>
-        <div class='container'>
-            <h1>Your resume here</h1>
+        <h1>Your Lovely Resume</h1>
+        {% if resume is not empty %}
+            <ul>
+                {% for job in resume %}
+                    <li>Company: {{ job.getCompany }}</li>
+                    <li>Title: {{ job.getTitle }}</li>
+                    <li>Start Date:{{ job.getStartDate }}</li>
+                    <li>End Date: {{ job.getEndDate }}</li>
+                    <li>Address: {{ job.getAddress }}</li>
+                    <li>Salary: {{ job.getSalary }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p> No jobs entered </p>
+        {% endif %}
 
-            <form action='/create_job' method='post'>
-                <div class='form-group'>
-                    <label for='company'>Company</label>
-                    <input id='company' name='company' type='text'>
-                </div>
+        <p><a href="/create_job">Add a job</a></p>
 
-                <div class='form-group'>
-                    <label for='title'>Job Title</label>
-                    <input id='title' name='title' type='text'>
-                </div>
-
-                <div class='form-group'>
-                    <label for='start_date'>Start Date</label>
-                    <input id='start_date' name='start_date' type='date'>
-                </div>
-
-                <div class='form-group'>
-                    <label for='end_date'>End Date</label>
-                    <input id='end_date' name='end_date' type='date'>
-                </div>
-
-                <div class='form-group'>
-                    <label for='address'>Address</label>
-                    <input id='address' name='address' type='text'>
-                </div>
-
-                <div class='form-group'>
-                    <label for='salary'>Salary</label>
-                    <input id='salary' name='salary' type='number'>
-                </div>
-
-                <button type='submit'>Add Job</button>
-
-            </form>
-        </div>
     </body>
 </html>
