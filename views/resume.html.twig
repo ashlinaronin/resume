@@ -1,25 +1,42 @@
 <html>
     <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
         <title>Resume</title>
     </head>
     <body>
-        <h1>Your Lovely Resume</h1>
-        {% if resume is not empty %}
-            <ul>
-                {% for job in resume %}
-                    <li>Company: {{ job.getCompany }}</li>
-                    <li>Title: {{ job.getTitle }}</li>
-                    <li>Start Date:{{ job.getStartDate }}</li>
-                    <li>End Date: {{ job.getEndDate }}</li>
-                    <li>Address: {{ job.getAddress }}</li>
-                    <li>Salary: {{ job.getSalary }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p> No jobs entered </p>
-        {% endif %}
+        <div class='container'>
+            <h1>Your Lovely Resume</h1>
+            {% if resume is not empty %}
 
-        <p><a href="/create_job">Add a job</a></p>
 
+                    {% for job in resume %}
+                        <div class='row'>
+                            <div class='col-md-3'><strong>Company:</strong> {{ job.getCompany }}</div>
+                            <div class='col-md-3'>Start Date: {{ job.getStartDate }}</div>
+                            <div class='col-md-3'>End Date: {{ job.getEndDate }}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Address: {{ job.getAddress }}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Title: {{ job.getTitle }}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Salary: {{ job.getSalary }}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-9'>
+                                <p></p>
+                                <hr>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+            {% else %}
+                <p> No jobs entered </p>
+            {% endif %}
+
+            <p><a href="/create_job">Add a job</a></p>
+    </div>
     </body>
 </html>
